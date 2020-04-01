@@ -1,0 +1,41 @@
+<html>
+
+<body>
+
+<h1>{{rs.name}}</h1>
+
+<!-- Flashing Example-->
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+
+<ul>
+{% for message in messages %}
+  <li><strong>{{message}}</strong></li>
+{% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+
+<a href='{{url_for('newMenuItem', restaurant_id = rs.id) }}'>Create New Item</a>
+
+{% for i in items %}
+
+<div>
+
+<p>{{i.name}}</p>
+
+<p>{{i.description}}</p>
+
+<p>{{i.price}}</p>
+
+<a href='{{url_for('editMenuItem', restaurant_id = rs.id, menu_id = i.id)}}'>Edit</a>
+
+</br>
+<a href='{{url_for('deleteMenuItem', restaurant_id = rs.id, menu_id = i.id)}}'>Delete</a>
+
+</div>
+
+{% endfor %}
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<html>
+<body>
+<h1> Edit Menu Item </h1>
+
+<form action="{{url_for('editMenuItem', restaurant_id=restaurant_id, menu_id=menu_id)}}" method = 'POST'>
+
+<p>Name:</p><input type='text' size='30' name='name', placeholder = '{{item.name}}'>
+
+<p>Price:</p><input type='text' size='30' name='price', placeholder = '{{item.price}}'>
+
+<p>Course:</p><input type='text' size='30' name='course', placeholder = '{{item.course}}'>
+
+<p>Description:</p><input type='text' size='100' name='description', placeholder = '{{item.description}}'>
+<br>
+<br>
+<input type='submit' value='Edit'>
+
+</form>
+<a href= '{{url_for('restaurantMenu', restaurant_id= item.restaurant_id)}}'>Cancel</a>
+</body>
+</html>

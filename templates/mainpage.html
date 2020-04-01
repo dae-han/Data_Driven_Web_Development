@@ -1,15 +1,19 @@
 <html>
 
-<body>
+<!--Stlying-->
+<head>
+  <link rel=stylesheet type=text/css href="{{url_for('static', filename='styles.css')}}">
+</head>
 
+<div class = 'header'>
 <h1>WELCOME</h1>
-<br>
 <h2>Restaurants<h2>
+</div>
 
 {% for r in all_rs %}
 
-<div>
-
+<div class = 'mainmenu'>
+  
 <a href='{{url_for('restaurantMenu', restaurant_id = r.id) }}'>{{r.name}}</a>
 
 </div>
